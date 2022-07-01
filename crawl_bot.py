@@ -12,7 +12,7 @@ import socks, socket
 
 #Initiating Connection
 with Controller.from_port(port=9051) as controller:
-    controller.authenticate("16:975E551CC19179966040700B3CA42216C351480AC90D2A92CE9CE4C1DA")
+    controller.authenticate(os.environ.get('HPASS'))
     controller.signal(Signal.NEWNYM)
 
 # TOR SETUP GLOBAL Vars
